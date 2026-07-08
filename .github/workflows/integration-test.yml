@@ -56,7 +56,12 @@ jobs:
     if: |
       always() &&
       (needs.validate-call-ref.result == 'success' || needs.validate-call-ref.result == 'skipped')
-    permissions: read-all
+    # Kept within what the workflow_call caller (release.yml's `integ` job)
+    # grants — a called workflow's job cannot request more than the caller.
+    # The collaborator lookup only needs repo read.
+    permissions:
+      contents: read
+      pull-requests: read
     runs-on: ubuntu-latest
     outputs:
       approval-env: ${{ steps.collab-check.outputs.result }}
