@@ -74,7 +74,7 @@ pip install strands-agents-tools
 To install the dependencies for optional tools:
 
 ```bash
-pip install strands-agents-tools[mem0_memory, use_browser, rss, use_computer]
+pip install "strands-agents-tools[mem0_memory, use_browser, rss, use_computer]"
 ```
 
 ### Development Install
@@ -86,7 +86,7 @@ cd tools
 
 # Create and activate virtual environment
 python3 -m venv .venv
-source .venv/bin/activate  # On Windows: venv\Scripts\activate
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
 # Install in development mode
 pip install -e ".[dev]"
@@ -154,7 +154,7 @@ Below is a comprehensive table of all available tools, how to use them with an a
 | mongodb_memory | `agent.tool.mongodb_memory(action="record", content="User prefers vegetarian pizza")` | Store and retrieve memories using MongoDB Atlas with semantic search via AWS Bedrock Titan embeddings (connection and namespace configured via `MongoDBMemoryTool` or environment variables) |
 | elasticsearch_memory | `agent.tool.elasticsearch_memory(action="record", content="User prefers dark mode")` | Store and retrieve memories using Elasticsearch with semantic search via AWS Bedrock Titan embeddings (connection and namespace configured via `ElasticsearchMemoryTool` or environment variables) |
 
-\* *These tools do not work on windows*
+\* *These tools do not work on Windows*
 
 ## 💻 Usage Examples
 
